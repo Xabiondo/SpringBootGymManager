@@ -1,0 +1,6 @@
+Post http://localhost:8080/api/grupos
+Content-Type: application/json
+{
+"nombre":"Xabi ,
+
+}
