@@ -35,7 +35,7 @@ public class GrupoMuscularRestController {
         Optional<GrupoMuscular> respuesta =  grupoMuscularService.buscarPorId(id);
         return new ResponseEntity<>(respuesta , HttpStatus.OK);
     }
-    @PostMapping("/grupos")
+    @PostMapping("/grupos/crear")
     public ResponseEntity<GrupoMuscular> crearGrupoMuscular(@Valid  @RequestBody GrupoMuscular grupoMuscular){
         GrupoMuscular grupoMuscular1 =  grupoMuscularService.guardar(grupoMuscular);
         return new ResponseEntity<>(grupoMuscular1 , HttpStatus.CREATED) ;

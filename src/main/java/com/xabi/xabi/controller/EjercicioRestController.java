@@ -39,12 +39,6 @@ public class EjercicioRestController {
         return new ResponseEntity<>(ejercicio , HttpStatus.OK );
     }
 
-    @GetMapping("/ejercicios")
-    public List<Ejercicio> listarEjerciciosGrupo(@RequestParam(defaultValue = "grupo") String grupo){
-        return ejercicioService.buscarPorGrupoMusuclar(grupo);
-
-
-    }
     @PostMapping("/ejercicios")
     public ResponseEntity<Ejercicio> crearEjercicios(@Valid @RequestBody Ejercicio ejercicio){
         String dificultad = ejercicio.getDificultad().toLowerCase();

@@ -21,6 +21,10 @@ public class GrupoMuscular {
     @Size(max = 255)
     private String descripcion ;
 
+    public  GrupoMuscular(){
+
+    }
+
     public GrupoMuscular(Long id, String nombre, String descripcion) {
         this.id = id;
 
