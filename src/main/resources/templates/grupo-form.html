@@ -5,24 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/web/grupos/nuevo}"
+<form th:action="@{/web/grupos/guardar}"
       th:object="${grupoMuscular}"
       method="post">
 
-    <label >Id : </label>
-    <br>
-    <input type="number" th:field="*{id}" />
-    <br>
+    <input type="hidden" th:field="*{id}" />
 
     <label>Nombre:</label>
-    <br>
     <input type="text" th:field="*{nombre}" />
-    <br>
 
     <label>Descripción:</label>
-    <br>
     <input type="text" th:field="*{descripcion}" />
-    <br>
 
     <button type="submit">Guardar</button>
 </form>

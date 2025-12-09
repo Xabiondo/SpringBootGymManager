@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/web/ejercicio/nuevo}"
+      th:object="${ejercicio}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Nombre:</label>
+    <input type="text" th:field="*{nombre}" />
+
+    <label>Descripción:</label>
+    <input type="text" th:field="*{descripcion}" />
+
+    <label>Grupo Muscular</label>
+    <select class="form-control" id="dropDownList" th:field="*{grupoMuscular}">
+        <option value="0">select option</option>
+        <option th:each="grupo: ${opciones}" th:value="${grupo.id}" th:text="${grupo.nombre}" ></option>
+    </select>
+    <label> Dificultad </label>
+    <select  th:field="*{dificultad}">
+        <option th:each="dificultad: ${dificultades}" th:value = "${dificultad}" th:text="${dificultad}" ></option>
+
+    </select>
+
+    <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

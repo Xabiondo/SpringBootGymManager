@@ -5,12 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/*@Controller
+@Controller
 public class HomeWebController {
 
-    @GetMapping
-    public Model vistaPrincipal(Model model){
+    @GetMapping("/web")
+    public String vistaPrincipal(Model model){
         return "home" ;
 
     }
-}*/
+}

@@ -1,0 +1,43 @@
+1. Inserts Grupo muscular ->
+
+el nombre de la tabla esta mal,
+
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Pectorales', 'Músculos del pecho, responsables de movimientos de empuje y aducción del brazo.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Espalda', 'Incluye dorsales y romboides. Encargados de las tracciones y la postura.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Cuádriceps', 'Músculos de la parte frontal del muslo, fundamentales para la extensión de rodilla.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Isquiosurales', 'Parte posterior del muslo (femorales), encargados de la flexión de rodilla.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Hombros', 'Deltoides anterior, medio y posterior. Permiten la rotación y elevación de brazos.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Bíceps', 'Músculos flexores del codo situados en la parte anterior del brazo.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Tríceps', 'Músculos extensores del codo situados en la parte posterior del brazo.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Glúteos', 'Grupo muscular potente encargado de la extensión de cadera y estabilidad pélvica.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Abdominales', 'Zona del core, incluye rectos y oblicuos. Estabilizan el tronco y protegen la columna.');
+INSERT INTO grupo_muscular (nombre, descripcion) VALUES ('Gemelos', 'Músculos de la pantorrilla (gastrocnemio y sóleo), encargados de la flexión plantar.');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Inserts Ejercicio
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Press de Banca', 'Ejercicio básico para el desarrollo del pecho con barra.', 'Media', 1);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Dominadas', 'Levantamiento del peso corporal colgado de una barra.', 'Alta', 2);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Sentadilla con Barra', 'Flexión de rodillas con peso para fortalecer piernas y glúteos.', 'Alta', 3);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Peso Muerto Rumano', 'Enfoque en la cadena posterior e isquiosurales.', 'Media', 4);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Press Militar', 'Empuje vertical con barra para hombros.', 'Media', 5);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Curl con Barra', 'Flexión de codos de pie para bíceps.', 'Baja', 6);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Press Francés', 'Extensión de codos tumbado para tríceps.', 'Media', 7);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Hip Thrust', 'Empuje de cadera con peso, ideal para glúteos.', 'Media', 8);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Plancha Abdominal', 'Ejercicio isométrico para fortalecer el core.', 'Baja', 9);
+INSERT INTO ejercicio (nombre, descripcion, dificultad, grupo_muscular_id) VALUES ('Elevación de Talones', 'Extensiones de tobillo para trabajar los gemelos.', 'Baja', 10);
