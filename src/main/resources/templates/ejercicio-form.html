@@ -2,34 +2,50 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Formulario Ejercicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<form th:action="@{/web/ejercicio/nuevo}"
-      th:object="${ejercicio}"
-      method="post">
+<body class="bg-light">
 
-    <input type="hidden" th:field="*{id}" />
+<div class="container mt-5">
+    <div class="card shadow-sm p-4" style="max-width: 500px; margin: auto;"> <h3 class="mb-3 text-center">Nuevo Ejercicio</h3>
 
-    <label>Nombre:</label>
-    <input type="text" th:field="*{nombre}" />
+        <form th:action="@{/web/ejercicio/nuevo}" th:object="${ejercicio}" method="post">
 
-    <label>Descripción:</label>
-    <input type="text" th:field="*{descripcion}" />
+            <input type="hidden" th:field="*{id}" />
 
-    <label>Grupo Muscular</label>
-    <select class="form-control" id="dropDownList" th:field="*{grupoMuscular}">
-        <option value="0">select option</option>
-        <option th:each="grupo: ${opciones}" th:value="${grupo.id}" th:text="${grupo.nombre}" ></option>
-    </select>
-    <label> Dificultad </label>
-    <select  th:field="*{dificultad}">
-        <option th:each="dificultad: ${dificultades}" th:value = "${dificultad}" th:text="${dificultad}" ></option>
+            <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input type="text" class="form-control" th:field="*{nombre}" placeholder="Nombre del ejercicio" />
+            </div>
 
-    </select>
+            <div class="mb-3">
+                <label class="form-label">Descripción:</label>
+                <input type="text" class="form-control" th:field="*{descripcion}" placeholder="Breve descripción" />
+            </div>
 
-    <button type="submit">Guardar</button>
-</form>
+            <div class="mb-3">
+                <label class="form-label">Grupo Muscular:</label>
+                <select class="form-select" id="dropDownList" th:field="*{grupoMuscular}">
+                    <option value="0">Selecciona una opción</option>
+                    <option th:each="grupo: ${opciones}" th:value="${grupo.id}" th:text="${grupo.nombre}"></option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Dificultad:</label>
+                <select class="form-select" th:field="*{dificultad}">
+                    <option th:each="dificultad: ${dificultades}" th:value="${dificultad}" th:text="${dificultad}"></option>
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
