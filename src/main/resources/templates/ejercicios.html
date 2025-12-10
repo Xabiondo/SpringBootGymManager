@@ -9,13 +9,13 @@
 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Grupos Musculares</h1> <a th:href="@{'/web/ejercicio/nuevo'}" class="btn btn-success">
+        <h1>Ejercicios</h1> <a th:href="@{'/web/ejercicio/nuevo'}" class="btn btn-success">
         + Añadir Ejercicio Muscular
     </a>
     </div>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Hola mundo</h1>
+        <h1>Ejercicios listado</h1>
     </div>
 
     <table class="table table-striped table-hover table-bordered shadow-sm">
@@ -33,8 +33,8 @@
             <td th:text="${ejercicio.nombre}"></td>
             <td th:text="${ejercicio.descripcion}"></td>
             <td>
-                <a th:href="@{'/web/grupos/' + ${ejercicio.id} + '/editar'}" class="btn btn-primary btn-sm">Editar</a>
-                <a th:href="@{'/web/grupos/' + ${ejercicio.id} + '/borrar'}" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres borrar?')">Borrar</a>
+                <a th:href="@{'/web/ejercicio/' + ${ejercicio.id} + '/editar'}" class="btn btn-primary btn-sm">Editar</a>
+                <a th:href="@{'/web/ejercicio/' + ${ejercicio.id} + '/borrar'}" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres borrar?')">Borrar</a>
             </td>
         </tr>
         </tbody>

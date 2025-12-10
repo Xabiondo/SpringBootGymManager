@@ -32,7 +32,7 @@ public class GrupoMuscularWebController {
         return "grupos-list";
 
     }
-    @PostMapping("/web/grupos/nuevo")
+    @PostMapping("/web/grupos/guardar")
     public  String formularioPlantillaEnviar(GrupoMuscular grupoMuscular){
         grupoMuscularService.guardar(grupoMuscular);
         return "redirect:/web/grupos";
