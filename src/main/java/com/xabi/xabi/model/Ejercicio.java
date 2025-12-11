@@ -28,6 +28,10 @@ public class Ejercicio {
     @JoinColumn(name = "GrupoMuscular_Id")
     GrupoMuscular grupoMuscular ;
 
+    /*@ManyToOne
+    @JoinColumn(name = "Rutina_Id")
+    private Rutina rutina ;*/
+
     public Ejercicio(){
 
     }
