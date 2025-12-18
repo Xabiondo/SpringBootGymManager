@@ -4,10 +4,13 @@ import com.xabi.xabi.model.Rutina;
 import com.xabi.xabi.repository.EjercicioRepository;
 import com.xabi.xabi.repository.RutinaEjercicioRepository;
 import com.xabi.xabi.repository.RutinaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class RutinaService {
 
     private final RutinaRepository rutinaRepository;

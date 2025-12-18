@@ -73,4 +73,6 @@ public class RutinaEjercicio {
     public void setOrden(int orden) {
         this.orden = orden;
     }
+
+
 }

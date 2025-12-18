@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Rutina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow-sm p-4" style="max-width: 600px; margin: auto;">
+        <h3 class="mb-3 text-center" th:text="${rutina.id != 0} ? 'Editar Rutina' : 'Nueva Rutina'">Rutina</h3>
+
+        <form th:action="@{/web/rutinas/guardar}" th:object="${rutina}" method="post">
+
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input type="text" class="form-control" th:field="*{nombre}" placeholder="Nombre de la rutina" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Descripción:</label>
+                <textarea class="form-control" th:field="*{descripcion}" rows="3" placeholder="Descripción breve"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Nivel:</label>
+                <select class="form-select" th:field="*{nivel}">
+                    <option value="" disabled selected>Selecciona un nivel</option>
+                    <option th:each="niv : ${niveles}" th:value="${niv}" th:text="${niv}"></option>
+                </select>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a th:href="@{/web/rutinas}" class="btn btn-secondary">Cancelar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

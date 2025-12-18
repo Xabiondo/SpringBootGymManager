@@ -5,9 +5,12 @@ import com.xabi.xabi.model.RutinaEjercicio;
 import com.xabi.xabi.repository.EjercicioRepository;
 import com.xabi.xabi.repository.RutinaEjercicioRepository;
 import com.xabi.xabi.repository.RutinaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class RutinaEjercicioService {
 
     private final RutinaRepository rutinaRepository ;
@@ -31,6 +34,11 @@ public class RutinaEjercicioService {
     }
     public void borrarRutinaEjercicio(Long id ){
          rutinaEjercicioRepository.deleteById(id);
+    }
+
+    public List<RutinaEjercicio> encontrarEjerciciosRutina (Long rutinaId){
+        return rutinaEjercicioRepository.findByRutinaId(rutinaId);
+
     }
 
 

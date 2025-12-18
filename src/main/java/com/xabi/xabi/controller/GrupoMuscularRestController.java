@@ -26,7 +26,7 @@ public class GrupoMuscularRestController {
     @GetMapping("/grupos")
     public ResponseEntity<List<GrupoMuscular>> listarGrupoMuscular(){
         List<GrupoMuscular> listaEjercicios = grupoMuscularService.listarTodo();
-        return new ResponseEntity<>(listaEjercicios , HttpStatus.OK);
+        return new ResponseEntity<List<GrupoMuscular>>(listaEjercicios , HttpStatus.OK);
 
     }
 

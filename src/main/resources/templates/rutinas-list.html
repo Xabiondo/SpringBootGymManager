@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Rutinas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Rutinas de Entrenamiento</h2>
+        <a th:href="@{/web}" class="btn btn-primary">Volver Home</a>
+        <a th:href="@{/web/rutinas/nueva}" class="btn btn-primary">Nueva Rutina</a>
+        <a th:href="@{/web/rutinas/ejercicioRutina/nuevo}" class="btn btn-primary">Añadir Ejercicio a Rutina</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+           <div th:if="${rutinas.empty}">
+               Aun no has creado rutinas
+
+           </div>
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Nivel</th>
+                    <th>Ejercicios</th>
+                    <th class="text-end">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="rutina : ${rutinas}">
+                    <td th:text="${rutina.id}">1</td>
+                    <td th:text="${rutina.nombre}">Full Body</td>
+                    <td th:text="${rutina.nivel}">Principiante</td>
+                    <td th:text="${rutina.ejercicios.size()}">0</td>
+                    <td class="text-end">
+                        <a th:href="@{/web/rutinas/{id}(id=${rutina.id})}" class="btn btn-sm btn-info text-white me-1">Ver Detalle</a>
+                        <a th:href="@{/web/rutinas/{id}/editar(id=${rutina.id})}" class="btn btn-sm btn-warning me-1">Editar</a>
+                        <a th:href="@{/web/rutinas/{id}/borrar(id=${rutina.id})}" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que deseas borrar esta rutina?');">Borrar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

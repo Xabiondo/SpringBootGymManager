@@ -61,6 +61,14 @@ public class Rutina {
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
+
+    public List<RutinaEjercicio> getEjercicios() {
+        return ejercicios;
+    }
+
+    public void setEjercicios(List<RutinaEjercicio> ejercicios) {
+        this.ejercicios = ejercicios;
+    }
 }
 
 

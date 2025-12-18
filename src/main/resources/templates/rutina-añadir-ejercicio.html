@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Rutina</title>
+
+</head>
+<body>
+<div>
+    <form th:action="@{/web/rutinas/ejercicioRutina/nuevo}" th:object="${rutinaEjercicio}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <div>
+            <label>Orden: </label>
+            <input type="text" th:field="*{orden}">
+
+        </div>
+        <div>
+            <label>Repeticiones: </label>
+            <input type="text" th:field="*{repeticiones}">
+        </div>
+        <div>
+            <label>Series: </label>
+            <input type="text" th:field="*{series}">
+        </div>
+        <div>
+            <label>Ejercicios : </label>
+            <select th:field="*{ejercicio}">
+                <option th:each="ejercicio : ${ejercicios}"
+                th:value="${ejercicio.id}" th:text="${ejercicio.nombre}"></option>
+            </select>
+
+        </div>
+        <div>
+            <label>Rutina : </label>
+            <select th:field="*{rutina}">
+                <option th:each="rutina : ${rutinas}"
+                        th:value="${rutina.id}" th:text="${rutina.nombre}"></option>
+            </select>
+
+        </div>
+        <div>
+            <button type="submit"> Guardar</button>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
